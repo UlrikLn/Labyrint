@@ -1,6 +1,6 @@
 console.log("We in");
 
-// Example usage:
+// Should move this to file
 const mazeData = {
   "rows": 6,
   "cols": 7,
@@ -70,13 +70,14 @@ const mazeData = {
   ]
 };
 
+
+//********* MODEL *********
+
 let startCell = "🚀"
 let goalCell = "🏁"
 
 //Stack to keep track of the route
 let route = []; 
-
-//********* MODEL *********
 
 // Maze model
 function mazeModel(rows, cols) {
@@ -104,6 +105,7 @@ function visitCell(row, col) {
   
   // Mark the cell as visited
   cell.visited = true;
+  // Change the color of the cell to lightgreen
   changeCellColor(row, col, 'lightgreen');
   
   // Push the cell to the route stack
@@ -206,4 +208,4 @@ function changeCellColor(row, col, color) {
 //********* CONTROLLER *********
 
 drawMaze(mazeData); // Draw the maze using the provided model
-visitCell(0,0);
+visitCell(0,0); // Start solver from the start cell
